@@ -51,11 +51,20 @@ function mapEslintResult(lintResult) {
 
 /**
  * @param {string} fileUri
+ * @returns {string}
+ */
+function getUriPath(fileUri) {
+  const uri = URI.parse(fileUri);
+  const file = uri.path;
+  return file;
+}
+
+/**
+ * @param {string} fileUri
  * @returns {Promise<import("vscode-languageserver").Diagnostic[]>}
  */
 async function runEslint(fileUri) {
-  const uri = URI.parse(fileUri);
-  const file = uri.path;
+  const file = getUriPath(fileUri);
   const cwd = dirname(file);
   const engine = new ESLint({ cwd });
   const eslintResult = await engine.lintFiles(file);
