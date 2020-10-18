@@ -1,5 +1,8 @@
 # eslint-lsp
 
+![npm](https://img.shields.io/npm/v/eslint-lsp)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
 Eslint language server
 
 NOTE: this is a work in progress and still lacks many feature
@@ -7,8 +10,8 @@ NOTE: this is a work in progress and still lacks many feature
 ## Installation
 
 ```sh
-npm install --global danielpza/eslint-lsp
-# npm install --global eslint-lsp # might not be published yet!
+npm install --global eslint-lsp
+# or from github npm install --global danielpza/eslint-lsp
 ```
 
 ## Usage
