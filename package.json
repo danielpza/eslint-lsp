@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "Eslint language server",
   "main": "src/index.js",
-  "bin": "src/cli.js",
+  "bin": {
+    "eslint-lsp": "src/cli.js"
+  },
   "files": [
     "src",
     "!src/__fixtures",
@@ -32,5 +34,13 @@
     "vscode-languageserver": "^6.1.1",
     "vscode-languageserver-textdocument": "^1.0.1",
     "vscode-uri": "^2.1.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielpza/eslint-lsp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/danielpza/eslint-lsp/issues"
+  },
+  "homepage": "https://github.com/danielpza/eslint-lsp#readme"
 }
