@@ -1,7 +1,7 @@
 {
   "name": "eslint-lsp",
   "version": "0.1.0",
-  "description": "",
+  "description": "Eslint language server",
   "main": "src/index.js",
   "bin": "src/cli.js",
   "files": [
@@ -13,7 +13,11 @@
     "check": "tsc --noEmit",
     "test": "jest"
   },
-  "keywords": [],
+  "keywords": [
+    "lsp",
+    "language-server",
+    "eslint"
+  ],
   "author": "Daniel Perez Alvarez <danielpza@protonmail.com> (https://github.com/danielpza)",
   "license": "MIT",
   "devDependencies": {
