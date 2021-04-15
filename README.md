@@ -25,17 +25,13 @@ eslint-lsp --stdio
 lsp-mode:
 
 ```el
-(use-package lsp-mode
-  :config
-  (setq lsp-eslint-server-command '("eslint-lsp" "--stdio")))
+(setq lsp-eslint-server-command '("eslint-lsp" "--stdio"))
 ```
 
 eglot:
 
 ```el
-(use-package eglot
-  :config
-  (add-to-list 'eglot-server-programs `(js-mode . ("eslint-lsp" "--stdio"))))
+(add-to-list 'eglot-server-programs `(js-mode . ("eslint-lsp" "--stdio")))
 ```
 
 ## Roadmap
