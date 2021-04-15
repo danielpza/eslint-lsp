@@ -20,15 +20,22 @@ npm install --global eslint-lsp
 eslint-lsp --stdio
 ```
 
-## Emacs Integration (lsp-mode)
+## Emacs Integration
 
-
-With `use-package`:
+lsp-mode:
 
 ```el
 (use-package lsp-mode
   :config
   (setq lsp-eslint-server-command '("eslint-lsp" "--stdio")))
+```
+
+eglot:
+
+```el
+(use-package eglot
+  :config
+  (add-to-list 'eglot-server-programs `(js-mode . ("eslint-lsp" "--stdio"))))
 ```
 
 ## Roadmap
