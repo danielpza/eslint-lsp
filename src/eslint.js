@@ -1,6 +1,19 @@
 const { DiagnosticSeverity } = require("vscode-languageserver");
 const { URI } = require("vscode-uri");
 const { dirname } = require("path");
+const importGlobal = require("import-global");
+
+/**
+ * @param {string} cwd
+ * @returns {import("eslint")}
+ */
+function getESLint(cwd) {
+  try {
+    return require(require.resolve("eslint", { paths: [cwd] }));
+  } catch (err) {
+    return importGlobal("eslint");
+  }
+}
 
 /**
  * @param {import("eslint").Linter.Severity} severity
@@ -66,12 +79,7 @@ async function runEslint(fileUri) {
   const file = getUriPath(fileUri);
   const cwd = dirname(file);
 
-  const { ESLint } = /** @type {import("eslint")} */ (require(require.resolve(
-    "eslint",
-    {
-      paths: [cwd],
-    }
-  )));
+  const { ESLint } = getESLint(cwd);
 
   const engine = new ESLint({ cwd });
   const eslintResult = await engine.lintFiles(file);
